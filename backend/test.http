@@ -1,0 +1,59 @@
+### Test base route
+GET http://localhost:5000/
+
+### Get all doubts
+GET http://localhost:5000/api/doubts
+
+### Get a single doubt by ID (replace the id below with a real one)
+GET http://localhost:5000/api/doubts/6a9be8b7a0cd30b565160687
+### Create a new doubt WITHOUT a token (should fail with 401)
+POST http://localhost:5000/api/doubts
+Content-Type: application/json
+
+{
+  "title": "Test without token",
+  "description": "This should fail",
+  "subject": "Test"
+}
+
+### Create a new doubt WITH a valid token (replace token below)
+POST http://localhost:5000/api/doubts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhOWE3MzY3NTFiNTc1NmM5ZTU3MDA1YyIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzg4NjAyMjgzLCJleHAiOjE3ODkyMDcwODN9.T63ignEh8hpwWbLhUiP-oDMKCCVxDHrviZ4HYneWyTM
+
+{
+  "title": "What is a closure?",
+  "description": "I dont understand closures in JS",
+  "subject": "JavaScript"
+}
+
+### Update a doubt (replace id below with a real one)
+PUT http://localhost:5000/api/doubts/6a9be8b7a0cd30b565160687
+Content-Type: application/json
+
+{
+  "status": "resolved"
+}
+
+### Delete a doubt (replace id below with a real one)
+DELETE http://localhost:5000/api/doubts/6a9be8b7a0cd30b565160687
+
+### Signup a new user
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Chirayu",
+  "email": "chirayu@test1.com",
+  "password": "test1234",
+  "role": "student"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "chirayu@test1.com",
+  "password": "test1234"
+}
