@@ -164,40 +164,6 @@ Frontend `.env`:
 ```env
 VITE_API_URL=http://localhost:5000
 ```
-
-## 🔒 Security
-
-Never commit private credentials.
-
-```gitignore
-node_modules/
-.env
-.env.*
-!.env.example
-dist/
-build/
-```
-
-Keep `MONGO_URI` and `JWT_SECRET` private and configure them through deployment environment variables.
-
-## 📸 Screenshots
-
-Add screenshots to a `screenshots/` folder:
-
-```markdown
-![Login Page](screenshots/login.png)
-![Student Dashboard](screenshots/student-dashboard.png)
-![Mentor Dashboard](screenshots/mentor-dashboard.png)
-```
-
-Recommended screenshots:
-- Login and signup
-- Student dashboard
-- Post doubt form
-- Mentor dashboard
-- Statistics cards
-- Resolved doubt view
-
 ## ✅ Deployment Checklist
 
 - [x] Frontend deployed on Vercel
