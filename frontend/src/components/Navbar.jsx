@@ -19,7 +19,7 @@ function Navbar() {
     const fetchNotifications = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/notifications",
+          "https://peerhelp-s3gw.onrender.com/api/notifications",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ function Navbar() {
   const markNotificationsAsRead = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/notifications/read",
+        "https://peerhelp-s3gw.onrender.com/api/notifications/read",
         {
           method: "PATCH",
           headers: {

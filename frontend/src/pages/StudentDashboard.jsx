@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Dashboard.css";
 import { socket } from "../socket";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://peerhelp-s3gw.onrender.com/api";
 
 function StudentDashboard() {
   const [doubts, setDoubts] = useState([]);
@@ -34,7 +34,7 @@ function StudentDashboard() {
   const fetchDoubts = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/doubts?page=1&limit=10",
+        "https://peerhelp-s3gw.onrender.com/api/doubts?page=1&limit=10",
       );
       setDoubts(Array.isArray(res.data) ? res.data : res.data.doubts || []);
       setHasMore(res.data.length === 10);
@@ -49,7 +49,7 @@ function StudentDashboard() {
       const nextPage = page + 1;
 
       const res = await axios.get(
-        `http://localhost:5000/api/doubts?page=${nextPage}&limit=10`,
+        `https://peerhelp-s3gw.onrender.com/api/doubts?page=${nextPage}&limit=10`,
       );
 
       const newDoubts = Array.isArray(res.data)
@@ -68,7 +68,9 @@ function StudentDashboard() {
 
   const fetchDoubtStats = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/doubts/stats");
+      const res = await axios.get(
+        "https://peerhelp-s3gw.onrender.com/api/doubts/stats/api",
+      );
 
       setTotalDoubts(res.data.totalDoubts);
       setTotalOpenDoubts(res.data.openDoubts);
