@@ -69,7 +69,7 @@ function StudentDashboard() {
   const fetchDoubtStats = async () => {
     try {
       const res = await axios.get(
-        "https://peerhelp-s3gw.onrender.com/api/doubts/stats/api",
+        "https://peerhelp-s3gw.onrender.com/api/doubts/stats",
       );
 
       setTotalDoubts(res.data.totalDoubts);
